@@ -6,6 +6,19 @@ const NowPlayingCard = ({ cardInfo }: { cardInfo: NTSBroadcastInfo }) => {
     const startTime = useMemo(() => {
         return new Date(cardInfo?.start_timestamp).toLocaleTimeString()
     }, [cardInfo])
+
+    const endDate = useMemo(() => {
+        return new Date(cardInfo?.end_timestamp).toLocaleDateString();
+    }, [cardInfo]);
+    const startDate = useMemo(() => {
+        const date = new Date(cardInfo?.start_timestamp).toLocaleDateString();
+        if (date !== endDate) {
+            return date;
+        }
+        else return '';
+
+    }, [endDate, cardInfo])
+    
     const endTime = useMemo(() => {
         return new Date(cardInfo?.end_timestamp).toLocaleTimeString()
     }, [cardInfo])
@@ -27,7 +40,7 @@ const NowPlayingCard = ({ cardInfo }: { cardInfo: NTSBroadcastInfo }) => {
                                 {cardInfo?.embeds?.details.description}
                             </h4>
                         <h4 style={{ color: '#DDF8E8' }}>
-                            Broadcast time: {startTime} - {endTime}
+                            Broadcast time: {startTime} {startDate} - {endTime} {endDate}
                         </h4>
                         <h5 style={{ color: '#DDF8E8' }}>
                             Genres: {cardInfo?.embeds?.details.genres.map((genre, idx) => {
