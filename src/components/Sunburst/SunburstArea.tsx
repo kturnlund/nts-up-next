@@ -7,7 +7,7 @@ import { createPortal } from 'react-dom';
 
 const SunburstArea = () => {
     const sunburstRef = useRef<HTMLDivElement>(null)
-    const { genres, activeGenres } = useContext(NTSContext);
+    const { genres, activeGenres } = useContext(NTSContext) ?? {};
     const [tooltip, setTooltip] = useState<{
         x: number
         y: number
@@ -16,7 +16,7 @@ const SunburstArea = () => {
     } | null>(null)
 
     const genreSunburstData = useMemo(() => {
-        if (genres === null) {
+        if (genres === null || genres === undefined) {
             return []
         }
         else {

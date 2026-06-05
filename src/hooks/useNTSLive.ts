@@ -42,7 +42,7 @@ const useNTSLive = ({ poll }: { poll: number }) => {
             if (key === 'channel_name' || key === 'now' || key === 'next' || typeof value === 'string') {
                 return;
             }
-            else return value.links.find((link) => link.rel === 'details').href;
+            else return value.links.find((link) => link.rel === 'details')?.href;
         }).filter(item => item !== undefined);
 
         try {

@@ -1,6 +1,6 @@
 import { Sunburst } from '@nivo/sunburst'
 
-const SunburstChart = ({ data, setTooltip }) => {
+const SunburstChart = ({ data, setTooltip }: {data: any; setTooltip: any}) => {
 
 
 

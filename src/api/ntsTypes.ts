@@ -75,6 +75,13 @@ export type NTSBroadcastInfo = {
     links: NTSLink[],
 }
 
+export const default_empty_broadcast_info = {
+    broadcast_title: '',
+    start_timestamp: '',
+    end_timestamp: '',
+    links: [],
+}
+
 export type NTSLiveResponseItem = {
     channel_name: string,
     now: NTSBroadcastInfo,
@@ -112,7 +119,7 @@ export type NTSContextType = {
     data: MidFlightState<NTSLiveResponse>;
     combinedEpisodeInfo: NTSBroadcastInfo[];
     genres: Genre[] | null;
-    activeNowPlaying: NTSBroadcastInfo ;
+    activeNowPlaying: NTSBroadcastInfo | null;
     activeGenres?: string[]; 
     backTrack: () => void,
     forwardTrack: () => void,

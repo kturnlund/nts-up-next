@@ -31,7 +31,7 @@ const NowPlayingCard = ({ cardInfo }: { cardInfo: NTSBroadcastInfo }) => {
                         </h4>
                         <h5 style={{ color: '#DDF8E8' }}>
                             Genres: {cardInfo?.embeds?.details.genres.map((genre, idx) => {
-                                return idx !== cardInfo?.embeds?.details.genres.length - 1 ? genre.value + ',  ' : genre.value
+                                return idx !== (cardInfo?.embeds?.details.genres.length ?? 0) - 1 ? genre.value + ',  ' : genre.value
                             })}
                         </h5>
                     </div>
