@@ -1,0 +1,43 @@
+.playingCardArea {
+  position: relative;
+  min-height: 420px;
+  flex: 1;
+}
+
+.artwork {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.innerPlayingCard {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-40%);
+  width: 500;
+  background: #32213A;
+  border: 1.5px solid #DDF8E8;
+  padding: 16px 20px;
+  z-index: 1;
+}
+
+.playingCardControls {
+  position: absolute;
+  bottom: 30px;
+  left: 40%;
+  transform: translateX(-20%);
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  z-index: 2;
+}
+
+.playingCardButton {
+    background-color: #32213A;
+    color:#DDF8E8;
+    border: 1px solid #DDF8E8;
+    padding: 4px;
+}
