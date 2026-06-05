@@ -18,7 +18,7 @@ const NowPlayingCard = ({ cardInfo }: { cardInfo: NTSBroadcastInfo }) => {
         else return '';
 
     }, [endDate, cardInfo])
-    
+
     const endTime = useMemo(() => {
         return new Date(cardInfo?.end_timestamp).toLocaleTimeString()
     }, [cardInfo])
@@ -47,6 +47,9 @@ const NowPlayingCard = ({ cardInfo }: { cardInfo: NTSBroadcastInfo }) => {
                                 return idx !== (cardInfo?.embeds?.details.genres.length ?? 0) - 1 ? genre.value + ',  ' : genre.value
                             })}
                         </h5>
+                        <a href="https://www.nts.live" target="_blank" style={{color: '#DDF8E8'}}>
+                            Listen on NTS
+                        </a>
                     </div>
                 </div>
             </div>
